@@ -1,9 +1,6 @@
-FROM resin/rpi-raspbian:wheezy
+FROM dynamicdevices/core-image-mono-console-raspberrypi2:20151023124937
 MAINTAINER martin@prometheusengineering.net
-
-RUN apt-get update
-RUN apt-get install -y libmono2.0-cil libmono-system-core4.0-cil mono-runtime
 
 ADD layout/* /app/SimpleWebServer/
 
-CMD ["mono", "/app/SimpleWebServer/SimpleWebServer.exe"]
+CMD ["/usr/bin/mono", "/app/SimpleWebServer/SimpleWebServer.exe"]
